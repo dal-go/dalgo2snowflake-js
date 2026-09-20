@@ -10,6 +10,8 @@ The package is source-distributed; an npm release is not claimed. Pin Git depend
 pnpm add github:dal-go/dalgo-js#04ce7f644fc334da7e471f0be503a7b937c7025d github:dal-go/dalgo2snowflake-js
 ```
 
+With pnpm 11, Git dependencies that build from source require `allowBuilds` entries in the consuming project's `pnpm-workspace.yaml`. Authorize the exact reviewed, resolved Git revision for both `@dal-go/dalgo` and this adapter when pnpm reports `ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED`; do not enable all dependency scripts globally. This repository's allowlist covers its own pinned development dependency only and does not configure your consuming project.
+
 ```ts
 import { collection } from "@dal-go/dalgo";
 import { SnowflakeDatabase } from "@dal-go/dalgo2snowflake";
