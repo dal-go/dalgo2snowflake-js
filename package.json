@@ -1,0 +1,29 @@
+{
+  "name": "@dal-go/dalgo2snowflake",
+  "version": "0.1.0",
+  "description": "Read-only DALGO TypeScript adapter for the Snowflake SQL API",
+  "type": "module",
+  "packageManager": "pnpm@11.20.0",
+  "sideEffects": false,
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "LICENSE", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "eslint . && tsc --noEmit && vitest run && npm run build",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "prepack": "npm run build"
+  },
+  "repository": { "type": "git", "url": "git+https://github.com/dal-go/dalgo2snowflake-js.git" },
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "peerDependencies": { "@dal-go/dalgo": "^0.1.0" },
+  "devDependencies": {
+    "@dal-go/dalgo": "github:dal-go/dalgo-js#04ce7f644fc334da7e471f0be503a7b937c7025d",
+    "@eslint/js": "10.0.1",
+    "eslint": "10.11.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.70.0",
+    "vitest": "5.0.1"
+  }
+}
